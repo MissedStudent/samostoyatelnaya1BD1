@@ -16,7 +16,8 @@ public class Main {
                     1.Задачи по проекту
                     2.Загруженность сотрудника
                     3.Отчет о завершенных проектах
-                    4.Завершение работы программы
+                    4.Отчет о работах в производстве
+                    5.Завершение работы программы
                     """);
             swtch= scanner.nextInt();
             switch (swtch){
@@ -35,6 +36,10 @@ public class Main {
                     bd.finishedProjects();
                 }break;
                 case 4:{
+                    System.out.println("Работы в производстве");
+                    bd.unfinishedProjects();
+                }break;
+                case 5:{
                     bool=false;
                 }break;
                 default:{System.out.println("Значение выходит за предусмотренные пределы");}break;

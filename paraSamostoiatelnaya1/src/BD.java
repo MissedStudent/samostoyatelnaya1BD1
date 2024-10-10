@@ -72,4 +72,21 @@ public class BD {
             closeConnection(connection);
         }
     }
+    public void unfinishedProjects(){
+        Connection connection=null;
+        try {
+            connection=openConnection();
+            String query = "SELECT projects.project_name FROM `projects` WHERE projects.project_finished=0";
+            PreparedStatement statement= connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                String task=resultSet.getString("project_name");
+                System.out.println(task);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            closeConnection(connection);
+        }
+    }
 }
